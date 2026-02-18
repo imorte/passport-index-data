@@ -4,6 +4,8 @@ Travel visa requirements for 199 countries.
 
 Last updated: **17 February 2026**.
 
+For historical data(<= 2025) check [the repo](https://github.com/ilyankou/passport-index-dataset)
+
 ## Files
 
 7 datasets with identical data - one JSON and six CSVs. CSVs come in three country identifier variants: full names, ISO
