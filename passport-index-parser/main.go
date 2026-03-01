@@ -359,18 +359,17 @@ func main() {
 		"passport-index-tidy-iso2.csv",
 		"passport-index-tidy-iso3.csv",
 	}
-	historyBase := "../history"
+	historyBase := "history"
 	if info, err := os.Stat(historyBase); err == nil && info.IsDir() {
 		dateDir := fmt.Sprintf("%s/%s", historyBase, time.Now().Format("2006-01-02"))
 		if err := os.MkdirAll(dateDir, 0o755); err != nil {
 			log.Fatalf("Creating history dir: %v", err)
 		}
-		for _, f := range outputFiles {
-			src := fmt.Sprintf("../%s", f)
+		for _, src := range outputFiles {
 			if _, err := os.Stat(src); err != nil {
 				continue // file doesn't exist, skip
 			}
-			dst := fmt.Sprintf("%s/%s", dateDir, f)
+			dst := fmt.Sprintf("%s/%s", dateDir, src)
 			if err := os.Rename(src, dst); err != nil {
 				log.Fatalf("Moving %s to %s: %v", src, dst, err)
 			}

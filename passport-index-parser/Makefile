@@ -6,4 +6,4 @@ build:
 	docker build -t $(IMAGE) .
 
 upgrade: build
-	docker run --rm -v "$(CURDIR):/data" $(IMAGE)
+	docker run --rm -v "$(CURDIR)/..:/data" $(IMAGE)
